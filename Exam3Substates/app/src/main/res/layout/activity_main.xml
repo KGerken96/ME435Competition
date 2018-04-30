@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.rosehulman.gerkenkn.exam3substates.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:id="@+id/ballColorLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Red\nBall"
+            android:id="@+id/ball_1_textview"
+            android:layout_marginLeft="30dp"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="White\nBall"
+            android:id="@+id/ball_2_textview"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Blue\nBall"
+            android:id="@+id/ball_3_textview"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Kayla Gerken"
+            />
+    </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="High Level State"
+            android:layout_below="@id/ballColorLayout"
+            android:id="@+id/hls_title"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="---"
+            android:layout_marginLeft="15dp"
+            android:id="@+id/high_level_state_textview"
+            android:layout_below="@id/ballColorLayout"
+            android:layout_toRightOf="@id/hls_title"
+            android:layout_alignTop="@id/hls_title"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:id="@+id/mission_substate_textview"
+        android:layout_alignLeft="@id/high_level_state_textview"
+        android:layout_below="@id/high_level_state_textview"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/hls_title"
+        android:layout_alignTop="@id/mission_substate_textview"
+        android:text="Mission Substate"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:id="@+id/gps_textview"
+        android:layout_alignLeft="@id/high_level_state_textview"
+        android:layout_below="@id/mission_substate_textview"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/hls_title"
+        android:layout_alignTop="@id/gps_textview"
+        android:text="GPS"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:layout_below="@id/gps_textview"
+        android:layout_alignLeft="@id/gps_textview"
+        android:layout_marginTop="10dp"
+        android:id="@+id/target_xy_textview"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Target XY"
+        android:layout_alignTop="@id/target_xy_textview"
+        android:layout_alignLeft="@id/hls_title"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:id="@+id/target_heading_textview"
+        android:layout_below="@id/target_xy_textview"
+        android:layout_alignLeft="@id/target_xy_textview"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Target Heading"
+        android:layout_alignTop="@id/target_heading_textview"
+        android:layout_marginLeft="5dp"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/turn_amount_textview"
+        android:layout_below="@id/target_heading_textview"
+        android:text="---"
+        android:layout_alignLeft="@id/target_heading_textview"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Turn amount"
+        android:layout_alignTop="@id/turn_amount_textview"
+        android:layout_marginLeft="5dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="---"
+        android:id="@+id/command_textview"
+        android:layout_below="@id/turn_amount_textview"
+        android:layout_alignLeft="@id/turn_amount_textview"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Command"
+        android:layout_alignTop="@id/command_textview"
+        android:layout_marginLeft="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/command_textview"
+        android:layout_marginTop="40dp"
+        android:id="@+id/resetButtonLayout">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:onClick="handleReset"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Go"
+            android:onClick="handleGo"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/resetButtonLayout">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Not seen"
+            android:onClick="handleNotSeen"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Seen small"
+            android:onClick="handleSeenSmall"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Seen Big"
+            android:onClick="handleSeenBig"/>
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="mission complete"
+        android:layout_alignParentBottom="true"
+        android:onClick="handleMissionComplete"/>
+
+
+
+
+</RelativeLayout>
