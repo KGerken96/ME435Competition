@@ -22,7 +22,7 @@ import android.widget.ViewFlipper;
 import edu.rosehulman.me435.NavUtils;
 import edu.rosehulman.me435.RobotActivity;
 
-public class GolfBallDeliveryActivity extends RobotActivity {
+public class GolfBallDeliveryActivity extends ImageRecActivity {
 
 	/** Constant used with logging that you'll see later. */
 	public static final String TAG = "GolfBallDelivery";
@@ -148,7 +148,7 @@ public class GolfBallDeliveryActivity extends RobotActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //The topmost activity that uses views should load this line
-        setContentView(R.layout.activity_main);
+
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         mBallImageButtons = new ImageButton[]{(ImageButton) findViewById(R.id.location_1_image_button),
                 (ImageButton) findViewById(R.id.location_2_image_button),
