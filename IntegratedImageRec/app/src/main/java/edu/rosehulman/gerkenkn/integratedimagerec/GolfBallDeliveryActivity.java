@@ -75,7 +75,7 @@ public class GolfBallDeliveryActivity extends ImageRecActivity {
             mGuessXYTextView, mLeftDutyCycleTextView, mRightDutyCycleTextView, mMatchTimeTextView,
             mJumboXTextView,mJumboYTextView;
 
-    protected ViewFlipper mViewFlipper;
+    //protected ViewFlipper mViewFlipper;
 
     protected LinearLayout mJumbotronLinearLayout;
     // ---------------------- End of UI References ----------------------
@@ -166,12 +166,12 @@ public class GolfBallDeliveryActivity extends ImageRecActivity {
 
         mJumboXTextView=findViewById(R.id.jumbo_x);
         mJumboYTextView=findViewById(R.id.jumbo_y);
-        mViewFlipper=findViewById(R.id.my_view_flipper);
+       // mViewFlipper=findViewById(R.id.my_view_flipper);
         mGoOrStopButton=findViewById(R.id.jumbo_go_or_stop_button);
         mJumbotronLinearLayout=findViewById(R.id.jumbo_linear_layout);
 
         // When you start using the real hardware you don't need test buttons.
-        boolean hideFakeGpsButtons = false;
+        boolean hideFakeGpsButtons = true;
         if (hideFakeGpsButtons) {
             TableLayout fakeGpsButtonTable = (TableLayout) findViewById(R.id.fake_gps_button_table);
             fakeGpsButtonTable.setVisibility(View.GONE);
@@ -285,6 +285,21 @@ public class GolfBallDeliveryActivity extends ImageRecActivity {
         }
 
 
+
+        if(mConeFound){
+            mJumbotronLinearLayout.setBackgroundColor(Color.parseColor("#ff8000"));
+            if(mConeLeftRightLocation<0){
+                Log.d(TAG,"Turn left some amount");
+            }
+            if(mConeSize>0.1){
+                Log.d(TAG, "Might want to stop. the cone is pretty huge.");
+            }
+        }else if(mCurrentGpsHeading!=NO_HEADING){
+            mJumbotronLinearLayout.setBackgroundColor(Color.GREEN);
+        }else{
+            mJumbotronLinearLayout.setBackgroundColor(Color.GRAY);
+        }
+
         mMatchTimeTextView.setText(getString(R.string.time_format,timeRemainingSeconds/60,
                 timeRemainingSeconds%60));
 
@@ -348,12 +363,8 @@ public class GolfBallDeliveryActivity extends ImageRecActivity {
         }
 
 
-        //TODO once image rec is done, move this area to the loop function
-        if(mCurrentGpsHeading!=NO_HEADING){
-            mJumbotronLinearLayout.setBackgroundColor(Color.GREEN);
-        }else{
-            mJumbotronLinearLayout.setBackgroundColor(Color.GRAY);
-        }
+
+
 
         gpsInfo+="   "+mGpsCounter;
         mGpsInfoTextView.setText(gpsInfo);
